@@ -1,0 +1,15 @@
+.game-shell { width: min(100% - 3rem, 680px); }
+.back-link { color: var(--muted); font-size: .78rem; text-decoration: none; }
+.back-link:hover, .back-link:focus-visible { color: var(--accent); }
+.stats-card { margin-top: 2rem; }
+.stats-list { display: grid; gap: .15rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: .85rem 0; }
+.stats-list div { display: flex; justify-content: space-between; gap: 1rem; padding: .35rem .2rem; color: var(--muted); font-size: .82rem; }
+.stats-list strong { color: var(--text); font-weight: 400; text-align: right; }
+.vote-summary { margin-top: 1rem; color: var(--accent); font-weight: 700; text-align: center; }
+.refresh-status { margin: .55rem 0 0; color: var(--muted); font-size: .74rem; font-style: italic; text-align: center; }
+.game-actions { display: grid; gap: .55rem; margin-top: 1.5rem; }
+.game-actions a, .game-actions button { min-height: 2.6rem; border: 1px solid var(--line); background: #101411; color: var(--text); font: inherit; font-size: .8rem; text-decoration: none; cursor: pointer; }
+.game-actions a { display: grid; place-items: center; }
+.game-actions a:hover, .game-actions button:hover { border-color: var(--accent); background: #171d18; }
+.game-actions a:focus-visible, .game-actions button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 480px) { .game-shell { width: min(100% - 2rem, 680px); } .stats-list div { font-size: .75rem; } }

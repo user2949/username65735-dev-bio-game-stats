@@ -1,0 +1,228 @@
+:root {
+  color-scheme: dark;
+  --background: #0b0d0c;
+  --panel: #121613;
+  --text: #e0e8df;
+  --muted: #8b968d;
+  --accent: #b9e877;
+  --line: #2a342d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    linear-gradient(rgba(185, 232, 119, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(185, 232, 119, 0.025) 1px, transparent 1px),
+    var(--background);
+  background-size: 28px 28px;
+  font-family: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.page-shell {
+  width: min(100% - 3rem, 680px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 13vh, 8rem) 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid var(--line);
+  box-shadow: 8px 8px 0 rgba(185, 232, 119, 0.055);
+  transform: rotate(-0.3deg);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1.4rem 0.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.status-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(185, 232, 119, 0.8);
+}
+
+h1 {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(2rem, 8vw, 3.9rem);
+  font-weight: 700;
+  letter-spacing: -0.09em;
+  line-height: 0.95;
+  text-shadow: 2px 2px 0 rgba(224, 232, 223, 0.08);
+}
+
+.tagline {
+  margin: 1rem 0 2.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.facts {
+  display: grid;
+  gap: 0.72rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1.45;
+}
+
+.facts li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.facts li::before {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  content: ">";
+}
+
+.facts li:nth-child(2n) {
+  transform: translateX(0.45rem);
+}
+
+.flag-indonesia {
+  display: inline-block;
+  width: 1.15em;
+  height: 0.75em;
+  margin-left: 0.2em;
+  vertical-align: -0.08em;
+  border: 1px solid rgba(230, 236, 232, 0.35);
+  background: linear-gradient(to bottom, #e53935 0 50%, #fff 50% 100%);
+}
+
+strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.time-overlay {
+  display: inline-block;
+  padding: 0.1em 0.25em;
+  color: #dfffb8;
+  background: #1b251a;
+  border: 1px solid #33482b;
+  border-radius: 2px;
+  font: inherit;
+}
+
+.links {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 2.5rem;
+}
+
+.social-link {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.25rem;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  border: 1px solid var(--line);
+  background: #101411;
+  text-decoration: none;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.social-link.discord,
+.social-link.roblox-game {
+  transform: translateX(0.7rem);
+}
+
+.social-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.youtube {
+  color: #ff8f8f;
+}
+
+.discord {
+  color: #b8c8ff;
+}
+
+.roblox {
+  color: #e7ece8;
+}
+
+.social-link span:nth-child(2) {
+  color: var(--text);
+}
+
+.arrow {
+  color: var(--muted);
+}
+
+.social-link:hover {
+  background: #171d18;
+  border-color: var(--accent);
+  transform: translate(0.2rem, -0.16rem);
+}
+
+.social-link.discord:hover,
+.social-link.roblox-game:hover {
+  transform: translate(0.9rem, -0.16rem);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    width: min(100% - 2rem, 680px);
+    padding-top: 2.5rem;
+  }
+
+  .profile {
+    padding: 1.4rem;
+    box-shadow: 5px 5px 0 rgba(185, 232, 119, 0.055);
+  }
+
+  .facts li:nth-child(2n),
+  .social-link.discord,
+  .social-link.roblox-game {
+    transform: none;
+  }
+
+  .social-link.discord:hover,
+  .social-link.roblox-game:hover {
+    transform: translateY(-0.16rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile,
+  .social-link {
+    transition: none;
+    transform: none;
+  }
+}
