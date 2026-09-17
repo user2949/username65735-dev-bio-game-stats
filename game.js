@@ -18,8 +18,7 @@ const setStats = (data) => {
 async function fetchData() {
   try {
     const response = await fetch("/api/stats", { cache: "no-store" });
-    const contentType = response.headers.get("content-type") || "";
-    if (!response.ok || !contentType.includes("application/json")) return null;
+    if (!response.ok) return null;
     return await response.json();
   } catch (error) { console.warn("Could not fetch Roblox stats", error); return null; }
 }
