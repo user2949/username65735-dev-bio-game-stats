@@ -1,1 +1,40 @@
-a
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IR:E Game Statistics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="game.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell game-shell">
+      <a class="back-link" href="index.html">← back to @username65735</a>
+      <section class="profile stats-card" aria-labelledby="game-title">
+        <p class="status"><span class="status-dot"></span> live roblox data</p>
+        <h1 id="game-title">Game Statistics</h1>
+        <p class="tagline">Game Statistics</p>
+
+        <div class="stats-list" aria-live="polite">
+          <div><span>🎮 Playing</span><strong id="playing">...</strong></div>
+          <div><span>📈 Visits</span><strong id="visits">...</strong></div>
+          <div><span>📅 Created</span><strong id="created">...</strong></div>
+          <div><span>♻️ Updated</span><strong id="updated">...</strong></div>
+          <div><span>⭐ Favorited</span><strong id="favorited">...</strong></div>
+          <div><span>👍 Upvotes</span><strong id="upvotes">...</strong></div>
+          <div><span>👎 Downvotes</span><strong id="downvotes">...</strong></div>
+        </div>
+
+        <div class="vote-summary" id="vote-summary">👍 ...% &nbsp;|&nbsp; 👎 ...%</div>
+        <p class="refresh-status" id="refresh-status">Refreshing in ... seconds</p>
+
+        <div class="game-actions">
+          <button id="refresh-button" type="button">↻ Refresh Now</button>
+          <a href="https://discord.gg/XA4hwT2Kmj" target="_blank" rel="noopener noreferrer">◉ Join Discord</a>
+          <a href="https://www.roblox.com/games/71072019153057" target="_blank" rel="noopener noreferrer">▶ Play Game</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
